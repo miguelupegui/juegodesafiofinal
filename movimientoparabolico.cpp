@@ -1,6 +1,6 @@
-#include "fisica/movimientoparabolico.h"
+#include "movimientoparabolico.h"
 
-#include "nucleo/excepciones.h"
+#include "excepciones.h"
 
 MovimientoParabolico::MovimientoParabolico(double gravedad, double velocidadSalto, double sueloY)
     : gravedad_(gravedad), velocidadSalto_(velocidadSalto), sueloY_(sueloY) {

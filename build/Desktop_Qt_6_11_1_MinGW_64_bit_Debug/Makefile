@@ -84,51 +84,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\\CMakeFiles\progress.marks
@@ -161,24 +116,63 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Proyecto_Final
+# Target rules for targets named logica
 
 # Build rule for target.
-Proyecto_Final: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Proyecto_Final
-.PHONY : Proyecto_Final
+logica: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 logica
+.PHONY : logica
 
 # fast build rule for target.
-Proyecto_Final/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/build
-.PHONY : Proyecto_Final/fast
+logica/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/build
+.PHONY : logica/fast
+
+#=============================================================================
+# Target rules for targets named juego
+
+# Build rule for target.
+juego: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 juego
+.PHONY : juego
+
+# fast build rule for target.
+juego/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego.dir\build.make CMakeFiles/juego.dir/build
+.PHONY : juego/fast
+
+#=============================================================================
+# Target rules for targets named juego_autogen_timestamp_deps
+
+# Build rule for target.
+juego_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 juego_autogen_timestamp_deps
+.PHONY : juego_autogen_timestamp_deps
+
+# fast build rule for target.
+juego_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego_autogen_timestamp_deps.dir\build.make CMakeFiles/juego_autogen_timestamp_deps.dir/build
+.PHONY : juego_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named juego_autogen
+
+# Build rule for target.
+juego_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 juego_autogen
+.PHONY : juego_autogen
+
+# fast build rule for target.
+juego_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego_autogen.dir\build.make CMakeFiles/juego_autogen.dir/build
+.PHONY : juego_autogen/fast
 
 agentefuego.obj: agentefuego.cpp.obj
 .PHONY : agentefuego.obj
 
 # target to build an object file
 agentefuego.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/agentefuego.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/agentefuego.cpp.obj
 .PHONY : agentefuego.cpp.obj
 
 agentefuego.i: agentefuego.cpp.i
@@ -186,7 +180,7 @@ agentefuego.i: agentefuego.cpp.i
 
 # target to preprocess a source file
 agentefuego.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/agentefuego.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/agentefuego.cpp.i
 .PHONY : agentefuego.cpp.i
 
 agentefuego.s: agentefuego.cpp.s
@@ -194,7 +188,7 @@ agentefuego.s: agentefuego.cpp.s
 
 # target to generate assembly for a file
 agentefuego.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/agentefuego.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/agentefuego.cpp.s
 .PHONY : agentefuego.cpp.s
 
 configuraciondificultad.obj: configuraciondificultad.cpp.obj
@@ -202,7 +196,7 @@ configuraciondificultad.obj: configuraciondificultad.cpp.obj
 
 # target to build an object file
 configuraciondificultad.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/configuraciondificultad.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/configuraciondificultad.cpp.obj
 .PHONY : configuraciondificultad.cpp.obj
 
 configuraciondificultad.i: configuraciondificultad.cpp.i
@@ -210,7 +204,7 @@ configuraciondificultad.i: configuraciondificultad.cpp.i
 
 # target to preprocess a source file
 configuraciondificultad.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/configuraciondificultad.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/configuraciondificultad.cpp.i
 .PHONY : configuraciondificultad.cpp.i
 
 configuraciondificultad.s: configuraciondificultad.cpp.s
@@ -218,7 +212,7 @@ configuraciondificultad.s: configuraciondificultad.cpp.s
 
 # target to generate assembly for a file
 configuraciondificultad.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/configuraciondificultad.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/configuraciondificultad.cpp.s
 .PHONY : configuraciondificultad.cpp.s
 
 crecimientoexponencial.obj: crecimientoexponencial.cpp.obj
@@ -226,7 +220,7 @@ crecimientoexponencial.obj: crecimientoexponencial.cpp.obj
 
 # target to build an object file
 crecimientoexponencial.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/crecimientoexponencial.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/crecimientoexponencial.cpp.obj
 .PHONY : crecimientoexponencial.cpp.obj
 
 crecimientoexponencial.i: crecimientoexponencial.cpp.i
@@ -234,7 +228,7 @@ crecimientoexponencial.i: crecimientoexponencial.cpp.i
 
 # target to preprocess a source file
 crecimientoexponencial.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/crecimientoexponencial.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/crecimientoexponencial.cpp.i
 .PHONY : crecimientoexponencial.cpp.i
 
 crecimientoexponencial.s: crecimientoexponencial.cpp.s
@@ -242,15 +236,39 @@ crecimientoexponencial.s: crecimientoexponencial.cpp.s
 
 # target to generate assembly for a file
 crecimientoexponencial.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/crecimientoexponencial.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/crecimientoexponencial.cpp.s
 .PHONY : crecimientoexponencial.cpp.s
+
+juego_autogen/mocs_compilation.obj: juego_autogen/mocs_compilation.cpp.obj
+.PHONY : juego_autogen/mocs_compilation.obj
+
+# target to build an object file
+juego_autogen/mocs_compilation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego.dir\build.make CMakeFiles/juego.dir/juego_autogen/mocs_compilation.cpp.obj
+.PHONY : juego_autogen/mocs_compilation.cpp.obj
+
+juego_autogen/mocs_compilation.i: juego_autogen/mocs_compilation.cpp.i
+.PHONY : juego_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+juego_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego.dir\build.make CMakeFiles/juego.dir/juego_autogen/mocs_compilation.cpp.i
+.PHONY : juego_autogen/mocs_compilation.cpp.i
+
+juego_autogen/mocs_compilation.s: juego_autogen/mocs_compilation.cpp.s
+.PHONY : juego_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+juego_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego.dir\build.make CMakeFiles/juego.dir/juego_autogen/mocs_compilation.cpp.s
+.PHONY : juego_autogen/mocs_compilation.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego.dir\build.make CMakeFiles/juego.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -258,7 +276,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego.dir\build.make CMakeFiles/juego.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -266,7 +284,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego.dir\build.make CMakeFiles/juego.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 memoriaaprendizaje.obj: memoriaaprendizaje.cpp.obj
@@ -274,7 +292,7 @@ memoriaaprendizaje.obj: memoriaaprendizaje.cpp.obj
 
 # target to build an object file
 memoriaaprendizaje.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/memoriaaprendizaje.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/memoriaaprendizaje.cpp.obj
 .PHONY : memoriaaprendizaje.cpp.obj
 
 memoriaaprendizaje.i: memoriaaprendizaje.cpp.i
@@ -282,7 +300,7 @@ memoriaaprendizaje.i: memoriaaprendizaje.cpp.i
 
 # target to preprocess a source file
 memoriaaprendizaje.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/memoriaaprendizaje.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/memoriaaprendizaje.cpp.i
 .PHONY : memoriaaprendizaje.cpp.i
 
 memoriaaprendizaje.s: memoriaaprendizaje.cpp.s
@@ -290,7 +308,7 @@ memoriaaprendizaje.s: memoriaaprendizaje.cpp.s
 
 # target to generate assembly for a file
 memoriaaprendizaje.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/memoriaaprendizaje.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/memoriaaprendizaje.cpp.s
 .PHONY : memoriaaprendizaje.cpp.s
 
 movimientooscilatorio.obj: movimientooscilatorio.cpp.obj
@@ -298,7 +316,7 @@ movimientooscilatorio.obj: movimientooscilatorio.cpp.obj
 
 # target to build an object file
 movimientooscilatorio.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/movimientooscilatorio.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/movimientooscilatorio.cpp.obj
 .PHONY : movimientooscilatorio.cpp.obj
 
 movimientooscilatorio.i: movimientooscilatorio.cpp.i
@@ -306,7 +324,7 @@ movimientooscilatorio.i: movimientooscilatorio.cpp.i
 
 # target to preprocess a source file
 movimientooscilatorio.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/movimientooscilatorio.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/movimientooscilatorio.cpp.i
 .PHONY : movimientooscilatorio.cpp.i
 
 movimientooscilatorio.s: movimientooscilatorio.cpp.s
@@ -314,7 +332,7 @@ movimientooscilatorio.s: movimientooscilatorio.cpp.s
 
 # target to generate assembly for a file
 movimientooscilatorio.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/movimientooscilatorio.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/movimientooscilatorio.cpp.s
 .PHONY : movimientooscilatorio.cpp.s
 
 movimientoparabolico.obj: movimientoparabolico.cpp.obj
@@ -322,7 +340,7 @@ movimientoparabolico.obj: movimientoparabolico.cpp.obj
 
 # target to build an object file
 movimientoparabolico.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/movimientoparabolico.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/movimientoparabolico.cpp.obj
 .PHONY : movimientoparabolico.cpp.obj
 
 movimientoparabolico.i: movimientoparabolico.cpp.i
@@ -330,7 +348,7 @@ movimientoparabolico.i: movimientoparabolico.cpp.i
 
 # target to preprocess a source file
 movimientoparabolico.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/movimientoparabolico.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/movimientoparabolico.cpp.i
 .PHONY : movimientoparabolico.cpp.i
 
 movimientoparabolico.s: movimientoparabolico.cpp.s
@@ -338,7 +356,7 @@ movimientoparabolico.s: movimientoparabolico.cpp.s
 
 # target to generate assembly for a file
 movimientoparabolico.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/movimientoparabolico.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/movimientoparabolico.cpp.s
 .PHONY : movimientoparabolico.cpp.s
 
 # Help Target
@@ -348,12 +366,11 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
-	@echo ... install
-	@echo ... install/local
-	@echo ... install/strip
-	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... Proyecto_Final
+	@echo ... juego_autogen
+	@echo ... juego_autogen_timestamp_deps
+	@echo ... juego
+	@echo ... logica
 	@echo ... agentefuego.obj
 	@echo ... agentefuego.i
 	@echo ... agentefuego.s
@@ -363,6 +380,9 @@ help:
 	@echo ... crecimientoexponencial.obj
 	@echo ... crecimientoexponencial.i
 	@echo ... crecimientoexponencial.s
+	@echo ... juego_autogen/mocs_compilation.obj
+	@echo ... juego_autogen/mocs_compilation.i
+	@echo ... juego_autogen/mocs_compilation.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

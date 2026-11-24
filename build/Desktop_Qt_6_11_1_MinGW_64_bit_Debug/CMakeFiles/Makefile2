@@ -62,7 +62,8 @@ CMAKE_BINARY_DIR = C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Deskt
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Proyecto_Final.dir/all
+all: CMakeFiles/logica.dir/all
+all: CMakeFiles/juego.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -70,34 +71,117 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Proyecto_Final.dir/clean
+clean: CMakeFiles/logica.dir/clean
+clean: CMakeFiles/juego.dir/clean
+clean: CMakeFiles/juego_autogen_timestamp_deps.dir/clean
+clean: CMakeFiles/juego_autogen.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Proyecto_Final.dir
+# Target rules for target CMakeFiles/logica.dir
 
 # All Build rule for target.
-CMakeFiles/Proyecto_Final.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target Proyecto_Final"
-.PHONY : CMakeFiles/Proyecto_Final.dir/all
+CMakeFiles/logica.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=5,6,7,8,9,10,11 "Built target logica"
+.PHONY : CMakeFiles/logica.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Proyecto_Final.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles 8
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Proyecto_Final.dir/all
+CMakeFiles/logica.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/logica.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles 0
-.PHONY : CMakeFiles/Proyecto_Final.dir/rule
+.PHONY : CMakeFiles/logica.dir/rule
 
 # Convenience name for target.
-Proyecto_Final: CMakeFiles/Proyecto_Final.dir/rule
-.PHONY : Proyecto_Final
+logica: CMakeFiles/logica.dir/rule
+.PHONY : logica
 
 # clean rule for target.
-CMakeFiles/Proyecto_Final.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Proyecto_Final.dir\build.make CMakeFiles/Proyecto_Final.dir/clean
-.PHONY : CMakeFiles/Proyecto_Final.dir/clean
+CMakeFiles/logica.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logica.dir\build.make CMakeFiles/logica.dir/clean
+.PHONY : CMakeFiles/logica.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/juego.dir
+
+# All Build rule for target.
+CMakeFiles/juego.dir/all: CMakeFiles/juego_autogen.dir/all
+CMakeFiles/juego.dir/all: CMakeFiles/logica.dir/all
+CMakeFiles/juego.dir/all: CMakeFiles/juego_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego.dir\build.make CMakeFiles/juego.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego.dir\build.make CMakeFiles/juego.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=1,2,3 "Built target juego"
+.PHONY : CMakeFiles/juego.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/juego.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles 11
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/juego.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles 0
+.PHONY : CMakeFiles/juego.dir/rule
+
+# Convenience name for target.
+juego: CMakeFiles/juego.dir/rule
+.PHONY : juego
+
+# clean rule for target.
+CMakeFiles/juego.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego.dir\build.make CMakeFiles/juego.dir/clean
+.PHONY : CMakeFiles/juego.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/juego_autogen_timestamp_deps.dir
+
+# All Build rule for target.
+CMakeFiles/juego_autogen_timestamp_deps.dir/all: CMakeFiles/logica.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego_autogen_timestamp_deps.dir\build.make CMakeFiles/juego_autogen_timestamp_deps.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego_autogen_timestamp_deps.dir\build.make CMakeFiles/juego_autogen_timestamp_deps.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num= "Built target juego_autogen_timestamp_deps"
+.PHONY : CMakeFiles/juego_autogen_timestamp_deps.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/juego_autogen_timestamp_deps.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/juego_autogen_timestamp_deps.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles 0
+.PHONY : CMakeFiles/juego_autogen_timestamp_deps.dir/rule
+
+# Convenience name for target.
+juego_autogen_timestamp_deps: CMakeFiles/juego_autogen_timestamp_deps.dir/rule
+.PHONY : juego_autogen_timestamp_deps
+
+# clean rule for target.
+CMakeFiles/juego_autogen_timestamp_deps.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego_autogen_timestamp_deps.dir\build.make CMakeFiles/juego_autogen_timestamp_deps.dir/clean
+.PHONY : CMakeFiles/juego_autogen_timestamp_deps.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/juego_autogen.dir
+
+# All Build rule for target.
+CMakeFiles/juego_autogen.dir/all: CMakeFiles/juego_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego_autogen.dir\build.make CMakeFiles/juego_autogen.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego_autogen.dir\build.make CMakeFiles/juego_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=4 "Built target juego_autogen"
+.PHONY : CMakeFiles/juego_autogen.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/juego_autogen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/juego_autogen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\david\OneDrive\Escritorio\Proyecto_Final\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles 0
+.PHONY : CMakeFiles/juego_autogen.dir/rule
+
+# Convenience name for target.
+juego_autogen: CMakeFiles/juego_autogen.dir/rule
+.PHONY : juego_autogen
+
+# clean rule for target.
+CMakeFiles/juego_autogen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego_autogen.dir\build.make CMakeFiles/juego_autogen.dir/clean
+.PHONY : CMakeFiles/juego_autogen.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

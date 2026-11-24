@@ -1,7 +1,7 @@
 #ifndef MODELOFISICO_H
 #define MODELOFISICO_H
 
-#include "utilidades/vector2d.h"
+#include "vector2d.h"
 
 // Clase base abstracta de los modelos físicos (patrón estrategia).
 // Cada entidad recibe un modelo y le delega cómo se mueve.

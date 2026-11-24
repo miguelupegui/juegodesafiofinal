@@ -1,0 +1,328 @@
+---
+config:
+  layout: elk
+---
+classDiagram
+direction TB
+
+%% ===================== NÚCLEO =====================
+namespace Nucleo {
+    class Juego {
+        -Jugador* jugador
+        -NivelBase* nivelActual
+        -int indiceNivel
+        +iniciarNivel(int n) void
+        +siguienteNivel() void
+        +reiniciarNivel() void
+        +actualizar(double dt) void
+        +gameOver() void
+    }
+    class ExcepcionJuego {
+        +what() std::string
+    }
+    class ExcepcionConfiguracion
+    class ExcepcionRecurso
+}
+
+%% ===================== NIVELES =====================
+namespace Niveles {
+    class NivelBase {
+        <<abstract>>
+        #std::vector~Obstaculo*~ obstaculos
+        #std::vector~PowerUp*~ powerUps
+        #Jugador* jugador
+        #Camara camara
+        #double tiempoTranscurrido
+        #double metaRecorrido
+        #EstadoNivel estado
+        +cargarElementos() void*
+        +actualizar(double dt) void
+        +verificarVictoria() bool
+        +verificarDerrota() bool
+        +procesarColisiones() void
+        +limpiarMemoria() void
+    }
+    class EstadoNivel {
+        <<enumeration>>
+        EN_CURSO
+        VICTORIA
+        DERROTA
+    }
+    class NivelCaidaLibre {
+        -double alturaInicial
+        -double alturaActual
+        -ZonaSegura zona
+        -QuickTimeEvent qte
+        +cargarElementos() void
+        +generarEscombros() void
+        +generarPowerUps() void
+    }
+    class NivelCabinaAvion {
+        -AgenteFuego fuego
+        -Puerta puerta
+        -ConfiguracionDificultad config
+        +cargarElementos() void
+        +generarPasillo() void
+    }
+    class QuickTimeEvent {
+        -char teclaRequerida
+        -double ventanaTiempo
+        -double tiempoRestante
+        -bool activo
+        -bool completado
+        +iniciar() void
+        +registrarTecla(char t) void
+        +actualizar(double dt) void
+        +fallo() bool
+    }
+    class ConfiguracionDificultad {
+        -double velocidadBaseFuego
+        -double tasaCrecimientoFuego
+        -double umbralCercania
+        -double tasaAprendizaje
+        -double densidadObstaculos
+        -double velocidadPasillo
+        +cargarPreset(int nivel) void
+    }
+    class Camara {
+        -Vector2D posicion
+        -bool modoVertical
+        -MovimientoOscilatorio oscilacion
+        +seguir(ElementoJuego objetivo, double dt) void
+    }
+}
+
+%% ===================== ENTIDADES =====================
+namespace Entidades {
+    class ElementoJuego {
+        <<abstract>>
+        #Vector2D posicion
+        #Vector2D velocidad
+        #Rectangulo hitbox
+        #std::string rutaSprite
+        #bool activo
+        +actualizar(double dt) void*
+        +getHitbox() Rectangulo
+        +colisionaCon(ElementoJuego otro) bool
+    }
+    class Jugador {
+        -double factorVelocidad
+        -double factorGiro
+        -EstadoJugador estado
+        -bool vivo
+        -TemporizadorEfecto temporizador
+        -ModeloFisico* modeloMovimiento
+        +moverIzquierda() void
+        +moverDerecha() void
+        +saltar() void
+        +cambiarModelo(ModeloFisico* m) void
+        +aplicarEfecto(EstadoJugador e, double seg) void
+        +recibirImpacto() void
+        +estaInvencible() bool
+        +actualizar(double dt) void
+    }
+    class EstadoJugador {
+        <<enumeration>>
+        NORMAL
+        INVENCIBLE
+        RALENTIZADO
+    }
+    class TemporizadorEfecto {
+        -double duracion
+        -double tiempoRestante
+        -bool activo
+        +iniciar(double segundos) void
+        +actualizar(double dt) void
+        +haExpirado() bool
+    }
+    class Obstaculo {
+        <<abstract>>
+        +colisionar(Jugador j) void*
+    }
+    class Escombro {
+        -CaidaLibre caida
+        -double tamano
+        +colisionar(Jugador j) void
+        +actualizar(double dt) void
+    }
+    class CarritoVendedor {
+        -MovimientoOscilatorio vaiven
+        +colisionar(Jugador j) void
+        +actualizar(double dt) void
+    }
+    class Maleta {
+        -double ancho
+        -double alto
+        +colisionar(Jugador j) void
+        +actualizar(double dt) void
+    }
+    class PowerUp {
+        <<abstract>>
+        #double duracionEfecto
+        #bool recogido
+        +aplicarEfecto(Jugador j) void*
+    }
+    class PowerUpVelocidadBaja {
+        +aplicarEfecto(Jugador j) void
+        +actualizar(double dt) void
+    }
+    class PowerUpInvencibilidad {
+        +aplicarEfecto(Jugador j) void
+        +actualizar(double dt) void
+    }
+    class ZonaSegura {
+        -double alturaSegura
+        +jugadorEnZona(Jugador j) bool
+        +actualizar(double dt) void
+    }
+    class Puerta {
+        +jugadorLlego(Jugador j) bool
+        +actualizar(double dt) void
+    }
+}
+
+%% ===================== AGENTE INTELIGENTE =====================
+namespace AgenteInteligente {
+    class AgenteFuego {
+        -double velocidadBase
+        -double velocidadActual
+        -double factorVelocidad
+        -double umbralCercania
+        -double distanciaPercibida
+        -DecisionFuego decisionActual
+        -CrecimientoExponencial crecimiento
+        -MemoriaAprendizaje memoria
+        +percibir(Jugador j) double
+        +razonar() void
+        +actuar(double dt) void
+        +aprender(double tiempoSupervivencia) void
+        +alcanzo(Jugador j) bool
+        +actualizar(double dt) void
+    }
+    class DecisionFuego {
+        <<enumeration>>
+        MANTENER
+        ACELERAR
+    }
+    class MemoriaAprendizaje {
+        -std::vector~double~ historialTiempos
+        -double tiempoObjetivo
+        -double tasaAprendizaje
+        -double factorMin
+        -double factorMax
+        +registrar(double tiempo) void
+        +calcularNuevoFactor(double factorActual) double
+    }
+}
+
+%% ===================== FÍSICA =====================
+namespace Fisica {
+    class ModeloFisico {
+        <<abstract>>
+        +actualizar(double dt, Vector2D pos, Vector2D vel) void*
+        +reiniciar() void*
+    }
+    class CaidaLibre {
+        -double gravedad
+        -double coefArrastre
+        -double velocidadTerminal
+        -double factorRalentizacion
+        +setRalentizacion(double f) void
+        +actualizar(double dt, Vector2D pos, Vector2D vel) void
+    }
+    class MovimientoOscilatorio {
+        -double amplitud
+        -double frecuencia
+        -double fase
+        +desplazamiento(double t) double
+        +actualizar(double dt, Vector2D pos, Vector2D vel) void
+    }
+    class CrecimientoExponencial {
+        -double v0
+        -double tasaK
+        -double tiempo
+        +velocidadActual() double
+        +actualizar(double dt, Vector2D pos, Vector2D vel) void
+    }
+    class MovimientoParabolico {
+        -double gravedad
+        -double velocidadSalto
+        -bool enSuelo
+        +iniciarSalto() void
+        +actualizar(double dt, Vector2D pos, Vector2D vel) void
+    }
+}
+
+%% ===================== UTILIDADES =====================
+namespace Utilidades {
+    class Vector2D {
+        +double x
+        +double y
+        +sumar(Vector2D otro) Vector2D
+        +escalar(double k) Vector2D
+    }
+    class Rectangulo {
+        +double x
+        +double y
+        +double ancho
+        +double alto
+        +intersecta(Rectangulo otro) bool
+    }
+}
+
+%% ===================== RELACIONES =====================
+%% Herencia
+ExcepcionJuego <|-- ExcepcionConfiguracion
+ExcepcionJuego <|-- ExcepcionRecurso
+NivelBase <|-- NivelCaidaLibre
+NivelBase <|-- NivelCabinaAvion
+ElementoJuego <|-- Jugador
+ElementoJuego <|-- Obstaculo
+ElementoJuego <|-- PowerUp
+ElementoJuego <|-- ZonaSegura
+ElementoJuego <|-- Puerta
+ElementoJuego <|-- AgenteFuego
+Obstaculo <|-- Escombro
+Obstaculo <|-- CarritoVendedor
+Obstaculo <|-- Maleta
+PowerUp <|-- PowerUpVelocidadBaja
+PowerUp <|-- PowerUpInvencibilidad
+ModeloFisico <|-- CaidaLibre
+ModeloFisico <|-- MovimientoOscilatorio
+ModeloFisico <|-- CrecimientoExponencial
+ModeloFisico <|-- MovimientoParabolico
+
+%% Composición / agregación
+Juego "1" *-- "1" NivelBase : crea y destruye
+Juego "1" *-- "1" Jugador
+NivelBase "1" *-- "*" Obstaculo
+NivelBase "1" *-- "*" PowerUp
+NivelBase "1" *-- "1" Camara
+NivelBase "*" o-- "1" Jugador
+NivelCaidaLibre *-- ZonaSegura
+NivelCaidaLibre *-- QuickTimeEvent
+NivelCabinaAvion *-- AgenteFuego
+NivelCabinaAvion *-- Puerta
+NivelCabinaAvion *-- ConfiguracionDificultad
+Jugador *-- TemporizadorEfecto
+Jugador "1" o-- "1" ModeloFisico : estrategia de movimiento
+AgenteFuego *-- MemoriaAprendizaje
+AgenteFuego *-- CrecimientoExponencial
+Escombro *-- CaidaLibre
+CarritoVendedor *-- MovimientoOscilatorio
+Camara *-- MovimientoOscilatorio
+ElementoJuego *-- Vector2D
+ElementoJuego *-- Rectangulo
+
+%% Asociaciones simples (enums)
+NivelBase --> EstadoNivel
+Jugador --> EstadoJugador
+AgenteFuego --> DecisionFuego
+
+%% Dependencias
+Obstaculo ..> Jugador
+PowerUp ..> Jugador
+AgenteFuego ..> Jugador : percibe
+Camara ..> ElementoJuego : sigue
+
+note for AgenteFuego "Ciclo del agente:<br>1. Percepción - percibir()<br>2. Razonamiento - razonar()<br>3. Acción - actuar()<br>4. Aprendizaje - aprender()"

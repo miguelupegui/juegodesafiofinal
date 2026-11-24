@@ -1,10 +1,10 @@
 #ifndef AGENTEFUEGO_H
 #define AGENTEFUEGO_H
 
-#include "agente/memoriaaprendizaje.h"
-#include "fisica/crecimientoexponencial.h"
-#include "niveles/configuraciondificultad.h"
-#include "utilidades/vector2d.h"
+#include "memoriaaprendizaje.h"
+#include "crecimientoexponencial.h"
+#include "configuraciondificultad.h"
+#include "vector2d.h"
 
 // Decisión que toma el agente en cada actualización.
 enum class DecisionFuego { MANTENER, ACELERAR };

@@ -1,9 +1,9 @@
-#include "fisica/crecimientoexponencial.h"
+#include "crecimientoexponencial.h"
 
 #include <algorithm>
 #include <cmath>
 
-#include "nucleo/excepciones.h"
+#include "excepciones.h"
 
 CrecimientoExponencial::CrecimientoExponencial(double v0, double tasaK, double velocidadMax)
     : v0_(v0), tasaK_(tasaK), velocidadMax_(velocidadMax) {

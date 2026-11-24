@@ -1,7 +1,7 @@
 #ifndef CRECIMIENTOEXPONENCIAL_H
 #define CRECIMIENTOEXPONENCIAL_H
 
-#include "fisica/modelofisico.h"
+#include "modelofisico.h"
 
 // Velocidad del fuego: crece exponencialmente con el tiempo.
 //   v(t) = min(v0 * e^(k*t), vMax) * escala

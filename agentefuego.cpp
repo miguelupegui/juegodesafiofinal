@@ -1,6 +1,6 @@
-#include "agente/agentefuego.h"
+#include "agentefuego.h"
 
-#include "nucleo/excepciones.h"
+#include "excepciones.h"
 
 AgenteFuego::AgenteFuego(const ConfiguracionDificultad& config, MemoriaAprendizaje* memoria,
                          double xInicial)

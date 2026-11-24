@@ -1,7 +1,7 @@
 #ifndef MOVIMIENTOOSCILATORIO_H
 #define MOVIMIENTOOSCILATORIO_H
 
-#include "fisica/modelofisico.h"
+#include "modelofisico.h"
 
 // Movimiento armónico simple alrededor de un punto de origen, a lo largo de un eje.
 //   desplazamiento(t) = A * sen(2*pi*f*t + fase)

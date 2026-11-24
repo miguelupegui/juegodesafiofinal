@@ -1,8 +1,8 @@
-#include "fisica/movimientooscilatorio.h"
+#include "movimientooscilatorio.h"
 
 #include <cmath>
 
-#include "nucleo/excepciones.h"
+#include "excepciones.h"
 
 namespace {
 constexpr double kDosPi = 6.283185307179586;

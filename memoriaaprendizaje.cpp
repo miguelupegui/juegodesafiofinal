@@ -1,8 +1,8 @@
-#include "agente/memoriaaprendizaje.h"
+#include "memoriaaprendizaje.h"
 
 #include <algorithm>
 
-#include "nucleo/excepciones.h"
+#include "excepciones.h"
 
 MemoriaAprendizaje::MemoriaAprendizaje(double tiempoObjetivo, double tasaAprendizaje,
                                        double factorMin, double factorMax)

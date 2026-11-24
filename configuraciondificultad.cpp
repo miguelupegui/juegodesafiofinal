@@ -1,6 +1,6 @@
-#include "niveles/configuraciondificultad.h"
+#include "configuraciondificultad.h"
 
-#include "nucleo/excepciones.h"
+#include "excepciones.h"
 
 void ConfiguracionDificultad::cargarPreset(int nivel) {
     switch (nivel) {

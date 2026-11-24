@@ -1,7 +1,7 @@
 #ifndef MOVIMIENTOPARABOLICO_H
 #define MOVIMIENTOPARABOLICO_H
 
-#include "fisica/modelofisico.h"
+#include "modelofisico.h"
 
 // Salto del jugador: movimiento uniformemente acelerado en Y (parábola).
 //   y(t+dt)  = y + vy*dt + 1/2*g*dt^2
