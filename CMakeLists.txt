@@ -43,6 +43,10 @@ add_library(logica STATIC
     puerta.cpp
     zonasegura.h
     zonasegura.cpp
+    quicktimeevent.h
+    quicktimeevent.cpp
+    camara.h
+    camara.cpp
 )
 target_include_directories(logica PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_options(logica PRIVATE -Wall -Wextra)
