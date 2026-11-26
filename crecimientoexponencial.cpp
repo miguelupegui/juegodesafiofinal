@@ -1,24 +1,29 @@
 #include "crecimientoexponencial.h"
-
-#include <algorithm>
+#include "excepciones.h"
 #include <cmath>
 
-#include "excepciones.h"
-
 CrecimientoExponencial::CrecimientoExponencial(double v0, double tasaK, double velocidadMax)
-    : v0_(v0), tasaK_(tasaK), velocidadMax_(velocidadMax) {
-    if (v0 <= 0.0 || tasaK < 0.0 || velocidadMax < v0)
-        throw ExcepcionConfiguracion("v0 > 0, tasaK >= 0 y velocidadMax >= v0");
+{
+    if (v0 <= 0 || tasaK < 0 || velocidadMax < v0)
+        throw ExcepcionConfiguracion("tiene que ser v0 > 0, tasaK >= 0 y velocidadMax >= v0");
+
+    this->v0 = v0;
+    this->tasaK = tasaK;
+    this->velocidadMax = velocidadMax;
 }
 
-double CrecimientoExponencial::velocidadActual() const {
-    const double base = std::min(v0_ * std::exp(tasaK_ * tiempo_), velocidadMax_);
-    return base * escala_;
+double CrecimientoExponencial::velocidadActual() const
+{
+    double v = v0 * exp(tasaK * tiempo);
+    if (v > velocidadMax)
+        v = velocidadMax;
+    return v * escala;
 }
 
-void CrecimientoExponencial::actualizar(double dt, Vector2D& pos, Vector2D& vel) {
-    tiempo_ += dt;
+void CrecimientoExponencial::actualizar(double dt, Vector2D &pos, Vector2D &vel)
+{
+    tiempo += dt;
     vel.x = velocidadActual();
-    vel.y = 0.0;
+    vel.y = 0;
     pos.x += vel.x * dt;
 }

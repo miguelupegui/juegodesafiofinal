@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(JuegoChapecoense VERSION 0.1 LANGUAGES CXX)
+project(JuegoChapecoense VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -16,12 +16,33 @@ add_library(logica STATIC
     crecimientoexponencial.cpp
     movimientooscilatorio.h
     movimientooscilatorio.cpp
+    caidalibre.h
+    caidalibre.cpp
     configuraciondificultad.h
     configuraciondificultad.cpp
     memoriaaprendizaje.h
     memoriaaprendizaje.cpp
     agentefuego.h
     agentefuego.cpp
+    elementojuego.h
+    elementojuego.cpp
+    temporizadorefecto.h
+    temporizadorefecto.cpp
+    jugador.h
+    jugador.cpp
+    obstaculo.h
+    maleta.h
+    maleta.cpp
+    carritovendedor.h
+    carritovendedor.cpp
+    escombro.h
+    escombro.cpp
+    powerup.h
+    powerup.cpp
+    puerta.h
+    puerta.cpp
+    zonasegura.h
+    zonasegura.cpp
 )
 target_include_directories(logica PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_options(logica PRIVATE -Wall -Wextra)
