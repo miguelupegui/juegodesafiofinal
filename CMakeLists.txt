@@ -51,6 +51,10 @@ add_library(logica STATIC
     nivelbase.cpp
     nivelcabinaavion.h
     nivelcabinaavion.cpp
+    nivelcaidalibre.h
+    nivelcaidalibre.cpp
+    juego.h
+    juego.cpp
 )
 target_include_directories(logica PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_options(logica PRIVATE -Wall -Wextra)
