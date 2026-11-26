@@ -30,6 +30,19 @@ add_library(logica STATIC
     temporizadorefecto.cpp
     jugador.h
     jugador.cpp
+    obstaculo.h
+    maleta.h
+    maleta.cpp
+    carritovendedor.h
+    carritovendedor.cpp
+    escombro.h
+    escombro.cpp
+    powerup.h
+    powerup.cpp
+    puerta.h
+    puerta.cpp
+    zonasegura.h
+    zonasegura.cpp
 )
 target_include_directories(logica PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_options(logica PRIVATE -Wall -Wextra)
