@@ -43,6 +43,18 @@ add_library(logica STATIC
     puerta.cpp
     zonasegura.h
     zonasegura.cpp
+    quicktimeevent.h
+    quicktimeevent.cpp
+    camara.h
+    camara.cpp
+    nivelbase.h
+    nivelbase.cpp
+    nivelcabinaavion.h
+    nivelcabinaavion.cpp
+    nivelcaidalibre.h
+    nivelcaidalibre.cpp
+    juego.h
+    juego.cpp
 )
 target_include_directories(logica PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_options(logica PRIVATE -Wall -Wextra)
@@ -52,3 +64,6 @@ qt_standard_project_setup()
 
 qt_add_executable(juego main.cpp)
 target_link_libraries(juego PRIVATE logica Qt6::Widgets)
+
+add_executable(pruebas_logica pruebas.cpp)
+target_link_libraries(pruebas_logica PRIVATE logica)
