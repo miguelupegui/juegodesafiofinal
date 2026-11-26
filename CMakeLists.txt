@@ -16,12 +16,18 @@ add_library(logica STATIC
     crecimientoexponencial.cpp
     movimientooscilatorio.h
     movimientooscilatorio.cpp
+    caidalibre.h
+    caidalibre.cpp
     configuraciondificultad.h
     configuraciondificultad.cpp
     memoriaaprendizaje.h
     memoriaaprendizaje.cpp
     agentefuego.h
     agentefuego.cpp
+    elementojuego.h
+    elementojuego.cpp
+    temporizadorefecto.h
+    temporizadorefecto.cpp
 )
 target_include_directories(logica PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_options(logica PRIVATE -Wall -Wextra)
