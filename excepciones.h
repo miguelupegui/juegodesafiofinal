@@ -3,29 +3,29 @@
 
 #include <exception>
 #include <string>
-#include <utility>
 
-// Jerarquía de excepciones propia del juego.
 class ExcepcionJuego : public std::exception {
 public:
-    explicit ExcepcionJuego(std::string mensaje) : mensaje_(std::move(mensaje)) {}
-    const char* what() const noexcept override { return mensaje_.c_str(); }
+    ExcepcionJuego(std::string mensaje) {
+        this->mensaje = mensaje;
+    }
+    const char* what() const noexcept override {
+        return mensaje.c_str();
+    }
 
 private:
-    std::string mensaje_;
+    std::string mensaje;
 };
 
-// Valores de configuración inválidos (nivel inexistente, factores fuera de rango...).
 class ExcepcionConfiguracion : public ExcepcionJuego {
 public:
-    explicit ExcepcionConfiguracion(const std::string& mensaje)
+    ExcepcionConfiguracion(std::string mensaje)
         : ExcepcionJuego("Configuracion invalida: " + mensaje) {}
 };
 
-// Recursos que no se pueden cargar
 class ExcepcionRecurso : public ExcepcionJuego {
 public:
-    explicit ExcepcionRecurso(const std::string& mensaje)
+    ExcepcionRecurso(std::string mensaje)
         : ExcepcionJuego("Recurso no disponible: " + mensaje) {}
 };
 

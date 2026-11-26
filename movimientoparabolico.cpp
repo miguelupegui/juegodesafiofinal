@@ -1,43 +1,49 @@
 #include "movimientoparabolico.h"
-
 #include "excepciones.h"
+#include <cmath>
 
 MovimientoParabolico::MovimientoParabolico(double gravedad, double velocidadSalto, double sueloY)
-    : gravedad_(gravedad), velocidadSalto_(velocidadSalto), sueloY_(sueloY) {
-    if (gravedad <= 0.0 || velocidadSalto <= 0.0)
+    : gravedad(gravedad), velocidadSalto(velocidadSalto), sueloY(sueloY)
+{
+    if (gravedad <= 0 || velocidadSalto <= 0) {
         throw ExcepcionConfiguracion("gravedad y velocidadSalto deben ser positivas");
-}
-
-void MovimientoParabolico::iniciarSalto() {
-    if (enSuelo_) {
-        impulsoPendiente_ = true;
-        enSuelo_ = false;
     }
 }
 
-void MovimientoParabolico::actualizar(double dt, Vector2D& pos, Vector2D& vel) {
-    if (impulsoPendiente_) {
-        vel.y = -velocidadSalto_;
-        impulsoPendiente_ = false;
+void MovimientoParabolico::iniciarSalto()
+{
+    if (enSuelo == true) {
+        impulsoPendiente = true;
+        enSuelo = false;
     }
-    if (enSuelo_)
+}
+
+void MovimientoParabolico::actualizar(double dt, Vector2D &pos, Vector2D &vel)
+{
+    if (impulsoPendiente) {
+        vel.y = -velocidadSalto;
+        impulsoPendiente = false;
+    }
+    if (enSuelo)
         return;
 
-    pos.y += vel.y * dt + 0.5 * gravedad_ * dt * dt;
-    vel.y += gravedad_ * dt;
+    pos.y = pos.y + vel.y * dt + 0.5 * gravedad * pow(dt, 2);
+    vel.y = vel.y + gravedad * dt;
 
-    if (pos.y >= sueloY_) {   // aterrizó
-        pos.y = sueloY_;
-        vel.y = 0.0;
-        enSuelo_ = true;
+    if (pos.y >= sueloY) {
+        pos.y = sueloY;
+        vel.y = 0;
+        enSuelo = true;
     }
 }
 
-void MovimientoParabolico::reiniciar() {
-    enSuelo_ = true;
-    impulsoPendiente_ = false;
+void MovimientoParabolico::reiniciar()
+{
+    enSuelo = true;
+    impulsoPendiente = false;
 }
 
-double MovimientoParabolico::alturaMaxima() const {
-    return (velocidadSalto_ * velocidadSalto_) / (2.0 * gravedad_);
+double MovimientoParabolico::alturaMaxima() const
+{
+    return pow(velocidadSalto, 2) / (2 * gravedad);
 }
