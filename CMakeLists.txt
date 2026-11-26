@@ -64,3 +64,6 @@ qt_standard_project_setup()
 
 qt_add_executable(juego main.cpp)
 target_link_libraries(juego PRIVATE logica Qt6::Widgets)
+
+add_executable(pruebas_logica pruebas.cpp)
+target_link_libraries(pruebas_logica PRIVATE logica)
