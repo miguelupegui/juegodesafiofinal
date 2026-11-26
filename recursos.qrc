@@ -1,0 +1,45 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="sprites/caida_0.png">recursos/sprites/caida_0.png</file>
+        <file alias="sprites/caida_1.png">recursos/sprites/caida_1.png</file>
+        <file alias="sprites/caida_2.png">recursos/sprites/caida_2.png</file>
+        <file alias="sprites/caida_3.png">recursos/sprites/caida_3.png</file>
+        <file alias="sprites/caida_paracaidas.png">recursos/sprites/caida_paracaidas.png</file>
+        <file alias="sprites/carrito.png">recursos/sprites/carrito.png</file>
+        <file alias="sprites/chispa.png">recursos/sprites/chispa.png</file>
+        <file alias="sprites/escombro_cojin.png">recursos/sprites/escombro_cojin.png</file>
+        <file alias="sprites/escombro_maletin.png">recursos/sprites/escombro_maletin.png</file>
+        <file alias="sprites/escombro_mochila.png">recursos/sprites/escombro_mochila.png</file>
+        <file alias="sprites/escombro_motor.png">recursos/sprites/escombro_motor.png</file>
+        <file alias="sprites/escombro_silla.png">recursos/sprites/escombro_silla.png</file>
+        <file alias="sprites/fondo_cabina.png">recursos/sprites/fondo_cabina.png</file>
+        <file alias="sprites/fondo_cielo.png">recursos/sprites/fondo_cielo.png</file>
+        <file alias="sprites/fondo_suelo.png">recursos/sprites/fondo_suelo.png</file>
+        <file alias="sprites/fuego_0.png">recursos/sprites/fuego_0.png</file>
+        <file alias="sprites/fuego_1.png">recursos/sprites/fuego_1.png</file>
+        <file alias="sprites/fuego_2.png">recursos/sprites/fuego_2.png</file>
+        <file alias="sprites/jugador_0.png">recursos/sprites/jugador_0.png</file>
+        <file alias="sprites/jugador_1.png">recursos/sprites/jugador_1.png</file>
+        <file alias="sprites/jugador_2.png">recursos/sprites/jugador_2.png</file>
+        <file alias="sprites/jugador_3.png">recursos/sprites/jugador_3.png</file>
+        <file alias="sprites/jugador_4.png">recursos/sprites/jugador_4.png</file>
+        <file alias="sprites/jugador_5.png">recursos/sprites/jugador_5.png</file>
+        <file alias="sprites/jugador_6.png">recursos/sprites/jugador_6.png</file>
+        <file alias="sprites/jugador_7.png">recursos/sprites/jugador_7.png</file>
+        <file alias="sprites/maleta_rodante.png">recursos/sprites/maleta_rodante.png</file>
+        <file alias="sprites/maleta_verde.png">recursos/sprites/maleta_verde.png</file>
+        <file alias="sprites/mochila.png">recursos/sprites/mochila.png</file>
+        <file alias="sprites/paracaidas.png">recursos/sprites/paracaidas.png</file>
+        <file alias="sprites/poder_estrella.png">recursos/sprites/poder_estrella.png</file>
+        <file alias="sprites/poder_reloj.png">recursos/sprites/poder_reloj.png</file>
+        <file alias="sprites/puerta_abierta.png">recursos/sprites/puerta_abierta.png</file>
+        <file alias="sprites/puerta_cerrada.png">recursos/sprites/puerta_cerrada.png</file>
+        <file alias="sonidos/derrota.wav">recursos/sonidos/derrota.wav</file>
+        <file alias="sonidos/exito.wav">recursos/sonidos/exito.wav</file>
+        <file alias="sonidos/golpe.wav">recursos/sonidos/golpe.wav</file>
+        <file alias="sonidos/musica_fondo.wav">recursos/sonidos/musica_fondo.wav</file>
+        <file alias="sonidos/paracaidas.wav">recursos/sonidos/paracaidas.wav</file>
+        <file alias="sonidos/poder.wav">recursos/sonidos/poder.wav</file>
+        <file alias="sonidos/salto.wav">recursos/sonidos/salto.wav</file>
+    </qresource>
+</RCC>
