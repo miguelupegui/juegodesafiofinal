@@ -1,6 +1,0 @@
-C:/Users/david/OneDrive/Escritorio/Proyecto_Final/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/logica.dir
-C:/Users/david/OneDrive/Escritorio/Proyecto_Final/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/juego.dir
-C:/Users/david/OneDrive/Escritorio/Proyecto_Final/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/edit_cache.dir
-C:/Users/david/OneDrive/Escritorio/Proyecto_Final/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/david/OneDrive/Escritorio/Proyecto_Final/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/juego_autogen_timestamp_deps.dir
-C:/Users/david/OneDrive/Escritorio/Proyecto_Final/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/juego_autogen.dir
