@@ -28,6 +28,8 @@ add_library(logica STATIC
     elementojuego.cpp
     temporizadorefecto.h
     temporizadorefecto.cpp
+    jugador.h
+    jugador.cpp
 )
 target_include_directories(logica PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_options(logica PRIVATE -Wall -Wextra)
