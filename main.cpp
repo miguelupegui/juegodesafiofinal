@@ -1,29 +1,29 @@
 #include <QApplication>
-#include <QGraphicsScene>
-#include <QGraphicsView>
-#include <QGraphicsRectItem>
-#include <QBrush>
-#include <QPen>
+#include <QMessageBox>
+#include <cstdlib>
+#include <ctime>
 
+#include "vistajuego.h"
+#include "excepciones.h"
+
+// por ahora abre directo el juego en normal, despues se hace el menu
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+    srand((unsigned)time(nullptr));
 
-    // la escena
-    QGraphicsScene escena(0, 0, 960, 540);
-    escena.setBackgroundBrush(QColor(40, 40, 60));
-
-    // donde va el jugador
-    auto *prueba = escena.addRect(0, 0, 50, 80, QPen(Qt::NoPen), QBrush(Qt::red));
-    prueba->setPos(100, 400);
-
-    // cámara del mundo
-    QGraphicsView vista(&escena);
-    vista.setFixedSize(962, 542);
-    vista.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    vista.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    vista.setWindowTitle("Nivel 1 - Cabina del avion");
-    vista.show();
-
-    return app.exec();
+    try {
+        VistaJuego vista;
+        vista.setWindowTitle("Escape del Avion");
+        vista.show();
+        // por ahora: al ganar el nivel 1 pasa directo al 2 y al final se cierra
+        QObject::connect(&vista, &VistaJuego::nivelSuperado, &vista, &VistaJuego::empezarNivel2);
+        QObject::connect(&vista, &VistaJuego::juegoGanado, &vista, &QWidget::close);
+        QObject::connect(&vista, &VistaJuego::volverAlMenu, &vista, &QWidget::close);
+        vista.nuevoJuego(Dificultad::NORMAL);
+        return app.exec();
+    } catch (ExcepcionJuego& e) {
+        QMessageBox::critical(nullptr, "Error del juego", e.what());
+    }
+    return 1;
 }

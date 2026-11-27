@@ -59,11 +59,19 @@ add_library(logica STATIC
 target_include_directories(logica PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_options(logica PRIVATE -Wall -Wextra)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia)
 qt_standard_project_setup()
+set(CMAKE_AUTORCC ON)
 
-qt_add_executable(juego main.cpp)
-target_link_libraries(juego PRIVATE logica Qt6::Widgets)
+qt_add_executable(EscapeDelAvion WIN32
+    main.cpp
+    vistajuego.h
+    vistajuego.cpp
+    gestorsonido.h
+    gestorsonido.cpp
+    recursos.qrc
+)
+target_link_libraries(EscapeDelAvion PRIVATE logica Qt6::Widgets Qt6::Multimedia)
 
 add_executable(pruebas_logica pruebas.cpp)
 target_link_libraries(pruebas_logica PRIVATE logica)
