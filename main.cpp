@@ -2,28 +2,25 @@
 #include <QMessageBox>
 #include <cstdlib>
 #include <ctime>
+#include <new>
 
-#include "vistajuego.h"
+#include "ventanaprincipal.h"
 #include "excepciones.h"
 
-// por ahora abre directo el juego en normal, despues se hace el menu
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    srand((unsigned)time(nullptr));
+
+    srand(time(NULL));
 
     try {
-        VistaJuego vista;
-        vista.setWindowTitle("Escape del Avion");
-        vista.show();
-        // por ahora: al ganar el nivel 1 pasa directo al 2 y al final se cierra
-        QObject::connect(&vista, &VistaJuego::nivelSuperado, &vista, &VistaJuego::empezarNivel2);
-        QObject::connect(&vista, &VistaJuego::juegoGanado, &vista, &QWidget::close);
-        QObject::connect(&vista, &VistaJuego::volverAlMenu, &vista, &QWidget::close);
-        vista.nuevoJuego(Dificultad::NORMAL);
+        VentanaPrincipal ventana;
+        ventana.show();
         return app.exec();
     } catch (ExcepcionJuego& e) {
         QMessageBox::critical(nullptr, "Error del juego", e.what());
+    } catch (std::bad_alloc&) {
+        QMessageBox::critical(nullptr, "Error", "No hay memoria suficiente");
     }
     return 1;
 }
