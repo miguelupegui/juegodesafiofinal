@@ -65,6 +65,8 @@ set(CMAKE_AUTORCC ON)
 
 qt_add_executable(EscapeDelAvion WIN32
     main.cpp
+    menuprincipal.h
+    menuprincipal.cpp
     vistajuego.h
     vistajuego.cpp
     gestorsonido.h
