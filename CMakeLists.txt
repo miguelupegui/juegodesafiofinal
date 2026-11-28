@@ -67,6 +67,8 @@ qt_add_executable(EscapeDelAvion WIN32
     main.cpp
     menuprincipal.h
     menuprincipal.cpp
+    escenahistoria.h
+    escenahistoria.cpp
     vistajuego.h
     vistajuego.cpp
     gestorsonido.h
